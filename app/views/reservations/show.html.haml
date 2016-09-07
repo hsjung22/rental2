@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Time in:
+  = @reservation.time_in
+%p
+  %b Time out:
+  = @reservation.time_out
+
+= link_to 'Edit', edit_reservation_path(@reservation)
+\|
+= link_to 'Back', reservations_path
