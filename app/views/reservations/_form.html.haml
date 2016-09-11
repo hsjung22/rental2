@@ -1,16 +1,8 @@
-= form_for @reservation do |f|
-  - if @reservation.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@reservation.errors.count, "error")} prohibited this reservation from being saved:"
-      %ul
-        - @reservation.errors.full_messages.each do |msg|
-          %li= msg
+= simple_form_for @reservation do |f|
+  = f.error_notification
+  = f.association :car, label_method: :license_plate, value_method: :id, include_blank: false
 
-  .field
-    = f.label :time_in
-    = f.datetime_select :time_in
-  .field
-    = f.label :time_out
-    = f.datetime_select :time_out
-  .actions
-    = f.submit 'Save'
+  = f.input :time_in
+  = f.input :time_out
+  = f.hidden_field :client_id
+  = f.submit

@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
 
   # GET /reservations/new
   def new
-    @reservation = Reservation.new
+    @reservation = Reservation.new(client_id: params[:client_id])
   end
 
   # GET /reservations/1/edit
@@ -69,6 +69,6 @@ class ReservationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def reservation_params
-      params.require(:reservation).permit(:time_in, :time_out)
+      params.require(:reservation).permit(:time_in, :time_out, :client_id, :car_id)
     end
 end
