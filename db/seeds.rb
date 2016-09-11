@@ -7,13 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-# country_list = [
-#   [ "Germany", 81831000 ],
-#   [ "France", 65447374 ],
-#   [ "Belgium", 10839905 ],
-#   [ "Netherlands", 16680000 ]
-# ]
+10.times do
+	Client.create(name: Faker::Name.first_name, phone_number: Faker::PhoneNumber.cell_phone)
+end
 
-# country_list.each do |name, population|
-#   Country.create( name: name, population: population )
-# end
+
+20.times do
+	Car.create(license_plate: Faker::Number.number(10))
+end
