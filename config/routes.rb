@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'homes#index'
+  root 'welcome#index'
 
   resources :reservations
   resources :cars
