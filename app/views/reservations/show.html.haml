@@ -6,6 +6,12 @@
 %p
   %b Time out:
   = @reservation.time_out
+%p
+  %b Client:
+  = @reservation.client.name
+%p
+  %b Car #:
+  = @reservation.car.license_plate
 
 = link_to 'Edit', edit_reservation_path(@reservation)
 \|
