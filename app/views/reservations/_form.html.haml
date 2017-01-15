@@ -1,8 +1,8 @@
 = simple_form_for @reservation do |f|
   = f.error_notification
   = f.association :car, label_method: :license_plate, value_method: :id, include_blank: false
-
+  = f.association :client, label_method: :name, value_method: :id, include_blank: false
   = f.input :time_in
   = f.input :time_out
-  = f.hidden_field :client_id
+  
   = f.submit

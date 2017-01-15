@@ -1,0 +1,9 @@
+%nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      = link_to content_tag(:span, '',class: 'navbar-brand glyphicon glyphicon-home'), root_path
+    %ul.nav.navbar-nav
+      %li= link_to "Clients", clients_path
+      %li= link_to "Cars", cars_path
+      %li= link_to "Reservations", reservations_path
+

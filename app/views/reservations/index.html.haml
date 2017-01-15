@@ -16,10 +16,12 @@
       %tr
         %td= reservation.time_in
         %td= reservation.time_out
-        %td= reservation.client&.name
-        %td= reservation.car&.license_plate
+        %td= reservation.client.name
+        %td= reservation.car.license_plate
         %td= link_to 'Show', reservation
         %td= link_to 'Edit', edit_reservation_path(reservation)
         %td= link_to 'Destroy', reservation, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
+
+= link_to 'New Reservation', new_reservation_path
