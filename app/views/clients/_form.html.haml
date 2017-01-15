@@ -1,4 +1,16 @@
 = simple_form_for @client do |f|
-  = f.input :name
-  = f.input :phone_number
   = f.submit "Save", class: 'btn btn-default'
+  
+  .panel.panel-default
+    .panel-heading
+      Basic Information
+    .panel-body
+      = f.input :name
+      = f.input :phone_number
+
+  .panel.panel-default
+    .panel-heading
+      Additional Information
+    .panel-body
+      = f.input :introduction
+      = f.input :summary
