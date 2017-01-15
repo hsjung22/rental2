@@ -1,22 +1,19 @@
 %h1 Listing clients
 
-%table
+%table.table-condensed
   %thead
     %tr
       %th Name
       %th Phone number
       %th
-      %th
-      %th
 
   %tbody
     - @clients.each do |client|
       %tr
-        %td= client.name
+        %td= link_to client.name, edit_client_path(client)
         %td= client.phone_number
-        %td= link_to 'Show', client
-        %td= link_to 'Edit', edit_client_path(client)
-        %td= link_to 'Destroy', client, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        / %td= link_to 'Show', client
+        %td= link_to content_tag(:span, '', class: 'glyphicon glyphicon-trash'), client, :method => :delete, :data => { :confirm => 'Are you sure?' }, class: 'btn btn-danger'
 
 %br
 
